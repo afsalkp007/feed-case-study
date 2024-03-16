@@ -41,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F400E4B12BA5BB2300145483 /* EssentialFeedTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = EssentialFeedTests.xctestplan; path = EssentialFeedTests/EssentialFeedTests.xctestplan; sourceTree = SOURCE_ROOT; };
+		F400E4B22BA5BB9000145483 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
 		F45B46892BA2248D0059E30E /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		F468EE362BA594990025B541 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		F468EE372BA5B0450025B541 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		F475D7F02BA4E9E400208EDC /* EssentialFeedAPIEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				F400E4B22BA5BB9000145483 /* EssentialFeedAPIEndToEndTests.xctestplan */,
 				F475D7F12BA4E9E400208EDC /* EssentialFeedAPIEndToEndTests.swift */,
 			);
 			path = EssentialFeedAPIEndToEndTests;
@@ -157,6 +160,7 @@
 		F482E6492B9C9B3B00373F93 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
+				F400E4B12BA5BB2300145483 /* EssentialFeedTests.xctestplan */,
 				F482E64A2B9C9B3B00373F93 /* EssentialFeedTests.swift */,
 				F4829CDB2BA1A0D1002B7F9D /* Feed API */,
 			);
