@@ -9,6 +9,8 @@ on:
 
       runs-on: macos-14
 
+      timeout-minutes: 8
+
       stpes:
         - uses: actions:/checkout@v4
 
