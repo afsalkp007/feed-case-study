@@ -11,7 +11,7 @@ on:
 
       timeout-minutes: 8
 
-      stpes:
+      steps:
         - uses: actions:/checkout@v4
 
         -name: Select Xcode
