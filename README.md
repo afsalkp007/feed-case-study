@@ -190,7 +190,8 @@ Given the customer doesn't have connectivity
 
 ## Flowchart
 
-![Feed Loading Feature](feed_flowchart.png)
+![Flow](https://github.com/afsalkp007/feed-case-study/assets/23147303/352b05d2-12f6-4574-b6da-45fa40c1dfd8)
+
 
 ## Model Specs
 
@@ -338,4 +339,5 @@ GET /image/{image-id}/comments
 
 ## App Architecture
 
-![](architecture.png)
+![Architecture-](https://github.com/afsalkp007/feed-case-study/assets/23147303/e93361d0-046d-4f1f-a381-a56082d883e3)
+
