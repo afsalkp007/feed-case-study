@@ -25,7 +25,6 @@ class CacheFeedUseCaseTests: XCTestCase {
   }
   
   func test_save_doesNotRequestCacheInsertionOnDeletionError() {
-    let items = [uniqueItem(), uniqueItem()]
     let (sut, store)  = makeSUT()
     let deletionError = anyNSError()
 
