@@ -9,12 +9,12 @@ import XCTest
 import EssentialFeed
 
 class LocalFeedLoader {
-  private let currentDate: () -> Date
   private let store: FeedStore
+  private let currentDate: () -> Date
   
-  init(currentDate: @escaping () -> Date, store: FeedStore) {
-    self.currentDate = currentDate
+  init(store: FeedStore, currentDate: @escaping () -> Date) {
     self.store = store
+    self.currentDate = currentDate
   }
   
   func save(_ items: [FeedItem], completion: @escaping (Error?) -> Void) {
@@ -67,7 +67,7 @@ class CacheFeedUseCaseTests: XCTestCase {
   func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
     let timestamp = Date()
     let items = [uniqueItem(), uniqueItem()]
-    let (sut, store)  = makeSUT(currentData: { timestamp })
+    let (sut, store)  = makeSUT(currentDate: { timestamp })
 
     sut.save(items) { _ in }
     store.completeDeletionSuccessfully()
@@ -105,9 +105,9 @@ class CacheFeedUseCaseTests: XCTestCase {
   
   // MARK: - Helpers
   
-  private func makeSUT(currentData: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
+  private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
     let store  = FeedStoreSpy()
-    let sut = LocalFeedLoader(currentDate: currentData, store: store)
+    let sut = LocalFeedLoader(store: store, currentDate: currentDate)
     trackForMemoryLeaks(sut, file: file, line: line)
     trackForMemoryLeaks(store, file: file, line: line)
     return (sut, store)
