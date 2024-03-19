@@ -25,19 +25,25 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
   
   func test_load_failsOnRetrievalError() {
     let (sut, store) = makeSUT()
-    let retrievalError = anyNSError()
+    let error = anyNSError()
     let exp = expectation(description: "Wait for load completion")
     
     var receivedError: Error?
-    sut.load { error in
-      receivedError = error
+    sut.load { result in
+      switch result {
+      case let .failure(error):
+        receivedError = error
+        
+      default:
+        XCTFail("Expected failure, got \(result) instead")
+      }
       exp.fulfill()
     }
     
-    store.completeRetrieval(with: retrievalError)
+    store.completeRetrieval(with: error)
     wait(for: [exp], timeout: 1.0)
 
-    XCTAssertEqual(receivedError as NSError?, retrievalError)
+    XCTAssertEqual(receivedError as NSError?, error)
   }
 
   // MARK: - Helpers
