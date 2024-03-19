@@ -18,8 +18,8 @@ final class FeedItemsMapper {
     let location: String?
     let image: URL
     
-    var item: FeedItem {
-      return FeedItem(id: id, description: description, location: location, imageURL: image)
+    var item: FeedImage {
+      return FeedImage(id: id, description: description, location: location, url: image)
     }
   }
   
