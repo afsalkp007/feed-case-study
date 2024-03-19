@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import EssentialFeed
 
 extension XCTestCase {
   func anyURL() -> URL {
@@ -14,5 +15,15 @@ extension XCTestCase {
   
   func anyNSError() -> NSError {
     return NSError(domain: "any error", code: 0)
+  }
+  
+  func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
+    let models = [uniqueImage(), uniqueImage()]
+    let local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
+    return (models, local)
+  }
+  
+  func uniqueImage() -> FeedImage {
+    return FeedImage(id: UUID(), description: "description", location: "any", url: anyURL())
   }
 }

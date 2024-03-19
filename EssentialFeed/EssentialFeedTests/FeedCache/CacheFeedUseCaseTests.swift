@@ -110,12 +110,6 @@ class CacheFeedUseCaseTests: XCTestCase {
     return (sut, store)
   }
   
-  private func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
-    let models = [uniqueImage(), uniqueImage()]
-    let local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
-    return (models, local)
-  }
-  
   private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void) {
     let items = [uniqueImage(), uniqueImage()]
     
@@ -132,9 +126,5 @@ class CacheFeedUseCaseTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
 
     XCTAssertEqual(receivedError as NSError?, expectedError)
-  }
-  
-  func uniqueImage() -> FeedImage {
-    return FeedImage(id: UUID(), description: "description", location: "any", url: anyURL())
   }
 }
