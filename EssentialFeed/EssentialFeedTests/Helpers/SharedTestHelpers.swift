@@ -27,3 +27,14 @@ extension XCTestCase {
     return FeedImage(id: UUID(), description: "description", location: "any", url: anyURL())
   }
 }
+
+extension Date {
+  func adding(days: Int) -> Date {
+    return Calendar(identifier: .gregorian).date(byAdding: .day, value: days, to: self)!
+  }
+  
+  func adding(seconds: TimeInterval) -> Date {
+    return self + seconds
+  }
+}
+
