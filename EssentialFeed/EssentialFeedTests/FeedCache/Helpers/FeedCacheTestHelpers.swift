@@ -22,7 +22,11 @@ extension XCTestCase {
 
 extension Date {
   func minusFeedCacheMaxAge() -> Date {
-    return adding(days: -7)
+    return adding(days: -feedCacheMaxAgeInDays)
+  }
+  
+  private var feedCacheMaxAgeInDays: Int {
+    return 7
   }
   
   private func adding(days: Int) -> Date {
