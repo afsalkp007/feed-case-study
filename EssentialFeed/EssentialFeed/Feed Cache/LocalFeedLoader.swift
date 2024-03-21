@@ -10,15 +10,13 @@ import Foundation
 public class LocalFeedLoader {
   private let store: FeedStore
   private let currentDate: () -> Date
-  
   private let calendar = Calendar(identifier: .gregorian)
+  private var maxCacheAge: Int { return 7 }
   
   public init(store: FeedStore, currentDate: @escaping () -> Date) {
     self.store = store
     self.currentDate = currentDate
   }
-  
-  private var maxCacheAge: Int { return 7 }
   
   public func validateCache() {
     store.retrieve { [weak self] result in
@@ -36,11 +34,16 @@ public class LocalFeedLoader {
     }
   }
   
-  
   private func validate(_ timestamp: Date) -> Bool {
     guard let maxCacheAge = calendar.date(byAdding: .day, value: maxCacheAge, to: timestamp) else { return false }
-    
     return currentDate() < maxCacheAge
+  }
+  
+  private func cache(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
+    store.insert(feed.toLocal(), timestamp: self.currentDate(), completion: { [weak self] error in
+      guard self != nil else { return }
+      completion(error)
+    })
   }
 }
 
@@ -58,19 +61,12 @@ extension LocalFeedLoader {
       }
     }
   }
-  
-  private func cache(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void) {
-    store.insert(feed.toLocal(), timestamp: self.currentDate(), completion: { [weak self] error in
-      guard self != nil else { return }
-      completion(error)
-    })
-  }
 }
 
-extension LocalFeedLoader {
+extension LocalFeedLoader: FeedLoader {
   public typealias LoadResult = LoadFeedResult
   
-  public func load(_ completion: @escaping (LoadResult) -> Void) {
+  public func load(completion: @escaping (LoadResult) -> Void) {
     store.retrieve { [weak self] result in
       guard let self = self else { return }
       
