@@ -15,6 +15,6 @@ extension FailableRetrieveFeedStoreSpecs where Self: XCTestCase {
   }
   
   func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
-    expect(sut, toRetrieveTwice: .failure(anyNSError()))
+    expect(sut, toRetrieveTwice: .failure(anyNSError()), file: file, line: line)
   }
 }
