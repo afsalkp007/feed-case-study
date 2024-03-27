@@ -27,7 +27,7 @@ protocol FeedStoreSpecs {
 
 protocol FailableRetrieveFeedStoreSpecs: FeedStoreSpecs {
   func test_retrieve_deliversFailureOnRetrievalError()
-  func test_retrieve_hasNoSideEffectOnFailure()
+  func test_retrieve_hasNoSideEffectsOnFailure()
 }
 
 protocol FailableInsertFeedStoreSpecs: FeedStoreSpecs {
