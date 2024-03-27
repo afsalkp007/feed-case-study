@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
   
   override func setUp() {
     super.setUp()
@@ -116,7 +116,7 @@ class CodableFeedStoreTests: XCTestCase {
     let feed = uniqueImageFeed().local
     let timestamp = Date()
     
-    let insertionError = insert((feed, timestamp), to: sut)
+    insert((feed, timestamp), to: sut)
     
     expect(sut, toRetrieve: .empty)
   }
