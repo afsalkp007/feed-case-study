@@ -159,13 +159,5 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
   private func deleteStoreArtifacts() {
     try? FileManager.default.removeItem(at: testSpecificStoreURL())
   }
-  
-  private func testSpecificStoreURL() -> URL {
-    return cachesDirectory().appending(path: "\(type(of: self)).store")
-  }
-  
-  private func cachesDirectory() -> URL {
-    return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-  }
 }
 
