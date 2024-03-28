@@ -142,16 +142,24 @@
 			path = FeedCache;
 			sourceTree = "<group>";
 		};
+		F42931602BB563A300886E1A /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F429315B2BB49F9900886E1A /* CoreDataFeedStore.swift */,
+				F429315D2BB4A0A200886E1A /* FeedStore.xcdatamodeld */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		F4458E1A2BA85D50008E710B /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				F42931602BB563A300886E1A /* Infrastructure */,
 				F4458E1B2BA85D60008E710B /* LocalFeedLoader.swift */,
 				F4458E1D2BA85DF3008E710B /* FeedStore.swift */,
 				F4458E212BA86B5B008E710B /* LocalFeedImage.swift */,
 				F4549E602BAC332500188BDA /* FeedCachePolicy.swift */,
 				F429314D2BB2C93800886E1A /* CodableFeedStore.swift */,
-				F429315B2BB49F9900886E1A /* CoreDataFeedStore.swift */,
-				F429315D2BB4A0A200886E1A /* FeedStore.xcdatamodeld */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -772,8 +780,7 @@
 				F429315E2BB4A0A200886E1A /* FeedStore.xcdatamodel */,
 			);
 			currentVersion = F429315E2BB4A0A200886E1A /* FeedStore.xcdatamodel */;
-			name = FeedStore.xcdatamodeld;
-			path = "/Users/home/Desktop/feed-case-study/EssentialFeed/EssentialFeed/Feed Cache/FeedStore.xcdatamodeld";
+			path = FeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
