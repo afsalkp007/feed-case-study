@@ -18,26 +18,6 @@ extension XCTestCase {
   func uniqueImage() -> FeedImage {
     return FeedImage(id: UUID(), description: "description", location: "any", url: anyURL())
   }
-  
-  func testSpecificStoreURL() -> URL {
-    return cachesDirectory().appending(path: "\(type(of: self)).store")
-  }
-  
-  func cachesDirectory() -> URL {
-    return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-  }
-  
-  func setupEmptyStoreState() {
-    deleteStoreArtifacts()
-  }
-  
-  func undoStoreSideEffects() {
-    deleteStoreArtifacts()
-  }
-  
-  func deleteStoreArtifacts() {
-    try? FileManager.default.removeItem(at: testSpecificStoreURL())
-  }
 }
 
 extension Date {

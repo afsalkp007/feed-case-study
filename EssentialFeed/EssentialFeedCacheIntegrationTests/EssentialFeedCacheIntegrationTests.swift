@@ -31,7 +31,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     let sutToPerformLoad = makeSUT()
     let feed = uniqueImageFeed().models
     
-    save(sutToPerformSave, with: feed)
+    save(feed, with: sutToPerformSave)
 
     expect(sutToPerformLoad, toLoad: feed)
   }
@@ -43,8 +43,8 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     let firstFeed = uniqueImageFeed().models
     let latestFeed = uniqueImageFeed().models
     
-    save(sutToPerformFirstSave, with: firstFeed)
-    save(sutToPerformLastSave, with: latestFeed)
+    save(firstFeed, with: sutToPerformFirstSave)
+    save(latestFeed, with: sutToPerformLastSave)
     
     expect(sutToPerformLoad, toLoad: latestFeed)
   }
@@ -78,12 +78,32 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
   }
   
-  private func save(_ sut: LocalFeedLoader, with feed: [FeedImage]) {
+  private func save(_ feed: [FeedImage], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
     let saveExp = expectation(description: "wait for save completion")
-    sut.save(feed) { saveError in
-      XCTAssertNil(saveError, "Expected to save feed successfully")
+    loader.save(feed) { saveError in
+      XCTAssertNil(saveError, "Expected to save feed successfully", file: file, line: line)
       saveExp.fulfill()
     }
     wait(for: [saveExp], timeout: 1.0)
+  }
+  
+  private func testSpecificStoreURL() -> URL {
+    return cachesDirectory().appending(path: "\(type(of: self)).store")
+  }
+  
+  private func cachesDirectory() -> URL {
+    return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+  }
+  
+  private func setupEmptyStoreState() {
+    deleteStoreArtifacts()
+  }
+  
+  private func undoStoreSideEffects() {
+    deleteStoreArtifacts()
+  }
+  
+  private func deleteStoreArtifacts() {
+    try? FileManager.default.removeItem(at: testSpecificStoreURL())
   }
 }
