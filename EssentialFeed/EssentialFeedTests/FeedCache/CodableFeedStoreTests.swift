@@ -147,17 +147,5 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     trackForMemoryLeaks(sut, file: file, line: line)
     return sut
   }
-  
-  private func setupEmptyStoreState() {
-    deleteStoreArtifacts()
-  }
-  
-  private func undoStoreSideEffects() {
-    deleteStoreArtifacts()
-  }
-  
-  private func deleteStoreArtifacts() {
-    try? FileManager.default.removeItem(at: testSpecificStoreURL())
-  }
 }
 

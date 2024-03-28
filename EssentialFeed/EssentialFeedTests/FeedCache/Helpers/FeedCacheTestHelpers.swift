@@ -26,6 +26,18 @@ extension XCTestCase {
   func cachesDirectory() -> URL {
     return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
   }
+  
+  func setupEmptyStoreState() {
+    deleteStoreArtifacts()
+  }
+  
+  func undoStoreSideEffects() {
+    deleteStoreArtifacts()
+  }
+  
+  func deleteStoreArtifacts() {
+    try? FileManager.default.removeItem(at: testSpecificStoreURL())
+  }
 }
 
 extension Date {
