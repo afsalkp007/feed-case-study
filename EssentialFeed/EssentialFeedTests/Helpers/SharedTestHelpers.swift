@@ -15,14 +15,3 @@ func anyURL() -> URL {
 func anyNSError() -> NSError {
   return NSError(domain: "any error", code: 0)
 }
-
-extension XCTestCase {
-  func testSpecificStoreURL() -> URL {
-    return cachesDirectory().appending(path: "\(type(of: self)).store")
-  }
-  
-  func cachesDirectory() -> URL {
-    return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
-  }
-}
-
