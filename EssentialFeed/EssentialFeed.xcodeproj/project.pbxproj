@@ -474,9 +474,9 @@
 		F4C6309D2BBB5A5A00C1FD7A /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				F4C630A72BBB5B0500C1FD7A /* EssentialFeediOSTests.xctestplan */,
 				F49491562BC149D500E6E89D /* Helpers */,
 				F494916C2BC150D200E6E89D /* FeedUI */,
-				F4C630A72BBB5B0500C1FD7A /* EssentialFeediOSTests.xctestplan */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
