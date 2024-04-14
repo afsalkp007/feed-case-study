@@ -8,37 +8,23 @@
 import Foundation
 import EssentialFeed
 
-struct FeedImageModel<Image> {
-  let description: String?
-  let location: String?
-  let image: Image?
-  let isLoading: Bool
-  let shouldRetry: Bool
-  
-  var hasLocation: Bool {
-    return location != nil
-  }
-}
-
 protocol FeedImageView {
   associatedtype Image
   
-  func display(_ viewModel: FeedImageModel<Image>)
+  func display(_ viewModel: FeedImageViewModel<Image>)
 }
 
 final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == Image {
   private let view: View
   private let imageTransformer: (Data) -> Image?
-  
-  private var delegate: FeedImageCellControllerDelegate?
-  
+    
   init(view: View, imageTransformer: @escaping (Data) -> Image?) {
     self.view = view
     self.imageTransformer = imageTransformer
   }
   
   func didStartLoading(for model: FeedImage) {
-    view.display(FeedImageModel(
+    view.display(FeedImageViewModel(
       description: model.description,
       location: model.location,
       image: nil,
@@ -53,7 +39,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
       return didFinishLoading(with: InvalidImageError(), for: model)
     }
     
-    view.display(FeedImageModel(
+    view.display(FeedImageViewModel(
       description: model.description,
       location: model.location,
       image: image,
@@ -62,7 +48,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
   }
   
   func didFinishLoading(with error: Error, for model: FeedImage) {
-    view.display(FeedImageModel(
+    view.display(FeedImageViewModel(
       description: model.description,
       location: model.location,
       image: nil,
