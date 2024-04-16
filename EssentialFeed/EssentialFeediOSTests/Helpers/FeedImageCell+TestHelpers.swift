@@ -30,7 +30,7 @@ extension FeedImageCell {
   }
   
   var descriptionText: String? {
-    return descriptinoLabel.text
+    return descriptionLabel.text
   }
   
   var renderedImage: Data? {
