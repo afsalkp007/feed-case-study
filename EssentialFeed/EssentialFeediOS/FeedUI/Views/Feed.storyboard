@@ -123,6 +123,7 @@
                         <connections>
                             <outlet property="dataSource" destination="c3Z-by-rA7" id="BOa-tJ-XaN"/>
                             <outlet property="delegate" destination="c3Z-by-rA7" id="9HZ-DU-yXr"/>
+                            <outlet property="prefetchDataSource" destination="c3Z-by-rA7" id="Ll7-89-xGe"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Ffj-UC-MhA">
