@@ -75,6 +75,7 @@
 		F4E9CC4D2BCE6509001F87C0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E9CC4C2BCE6509001F87C0 /* Feed.storyboard */; };
 		F4E9CC4F2BCE68BF001F87C0 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E9CC4E2BCE68BF001F87C0 /* Feed.xcassets */; };
 		F4ECA7622BD13E37005280A9 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4ECA7602BD13E37005280A9 /* Feed.strings */; };
+		F4ECA7652BD14107005280A9 /* FeedViewControllerTests+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7642BD14107005280A9 /* FeedViewControllerTests+Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		F4E9CC4C2BCE6509001F87C0 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		F4E9CC4E2BCE68BF001F87C0 /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
 		F4ECA7612BD13E37005280A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
+		F4ECA7642BD14107005280A9 /* FeedViewControllerTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Localization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 		F49491612BC14C8200E6E89D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F4ECA7632BD140F0005280A9 /* Helpers */,
 				F460F8922BBB7A5900CF1EA4 /* FeedViewControllerTests.swift */,
 			);
 			path = Controllers;
@@ -514,6 +517,14 @@
 				F4ECA7602BD13E37005280A9 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
+			sourceTree = "<group>";
+		};
+		F4ECA7632BD140F0005280A9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4ECA7642BD14107005280A9 /* FeedViewControllerTests+Localization.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -848,6 +859,7 @@
 				F460F89B2BBB7F5B00CF1EA4 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				F49491582BC14A0300E6E89D /* UIImage+TestHelpers.swift in Sources */,
 				F49491662BC14DEE00E6E89D /* FeedImageCell+TestHelpers.swift in Sources */,
+				F4ECA7652BD14107005280A9 /* FeedViewControllerTests+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
