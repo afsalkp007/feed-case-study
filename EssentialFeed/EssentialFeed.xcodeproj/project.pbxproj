@@ -74,6 +74,7 @@
 		F4E9CC412BCD8C56001F87C0 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9CC402BCD8C56001F87C0 /* FeedImageViewModel.swift */; };
 		F4E9CC4D2BCE6509001F87C0 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E9CC4C2BCE6509001F87C0 /* Feed.storyboard */; };
 		F4E9CC4F2BCE68BF001F87C0 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E9CC4E2BCE68BF001F87C0 /* Feed.xcassets */; };
+		F4ECA7622BD13E37005280A9 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4ECA7602BD13E37005280A9 /* Feed.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +178,7 @@
 		F4E9CC402BCD8C56001F87C0 /* FeedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageViewModel.swift; sourceTree = "<group>"; };
 		F4E9CC4C2BCE6509001F87C0 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		F4E9CC4E2BCE68BF001F87C0 /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
+		F4ECA7612BD13E37005280A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +511,7 @@
 				F4E9CC382BCC433B001F87C0 /* FeedViewModel.swift */,
 				F4E9CC3A2BCC435C001F87C0 /* FeedLoadingViewModel.swift */,
 				F4E9CC402BCD8C56001F87C0 /* FeedImageViewModel.swift */,
+				F4ECA7602BD13E37005280A9 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 			files = (
 				F4E9CC4D2BCE6509001F87C0 /* Feed.storyboard in Resources */,
 				F4E9CC4F2BCE68BF001F87C0 /* Feed.xcassets in Resources */,
+				F4ECA7622BD13E37005280A9 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +875,17 @@
 			targetProxy = F4C6309B2BBB5A5A00C1FD7A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4ECA7602BD13E37005280A9 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4ECA7612BD13E37005280A9 /* en */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F44958C62BB5884B00727450 /* Debug */ = {
