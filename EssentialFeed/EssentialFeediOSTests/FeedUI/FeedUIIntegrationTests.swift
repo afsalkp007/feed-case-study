@@ -20,12 +20,14 @@ final class FeedUIIntegrationTests: XCTestCase {
     XCTAssertEqual(sut.title, localized("FEED_VIEW_TITLE"))
   }
   
-  func test_errorView_doesNotRenderFeedErrorOnLoad() {
-    let (sut, _) = makeSUT()
+  func test_errorView_rendersErrorOnFeedError() {
+    let (sut, loader) = makeSUT()
 
-    sut.loadViewIfNeeded()
-     
+    sut.simulateAppearance()
     XCTAssertNil(sut.errorMessage)
+
+    loader.completeFeedLoadinWithError()
+    XCTAssertEqual(sut.errorMessage, localized("FEED_VIEW_CONNECTION_ERROR"))
   }
   
   func test_loadFeedActions_requestFeedFromLoader() {
