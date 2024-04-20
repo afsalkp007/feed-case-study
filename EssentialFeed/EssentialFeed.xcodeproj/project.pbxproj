@@ -85,6 +85,7 @@
 		F4ECA7942BD3BC4B005280A9 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7932BD3BC4B005280A9 /* FeedErrorViewModel.swift */; };
 		F4ECA7962BD3BE73005280A9 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7952BD3BE73005280A9 /* Localized.swift */; };
 		F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7992BD3F090005280A9 /* ErrorView.swift */; };
+		F4ECA79D2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +202,7 @@
 		F4ECA7932BD3BC4B005280A9 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
 		F4ECA7952BD3BE73005280A9 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		F4ECA7992BD3F090005280A9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +554,7 @@
 				F49491542BBEDACA00E6E89D /* UIView+Shimmering.swift */,
 				F439938D2BCEA5B800D7C166 /* UITableView+Dequeueing.swift */,
 				F439938F2BCEA74500D7C166 /* UIImageView+Animations.swift */,
+				F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				F4ECA76C2BD16A6C005280A9 /* MainQueueDispatchDecorator.swift in Sources */,
 				F4E9CC372BCC32B6001F87C0 /* FeedImagePresenter.swift in Sources */,
 				F47C86AC2BBD5D130098AB8E /* FeedImageCell.swift in Sources */,
+				F4ECA79D2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift in Sources */,
 				F4ECA7702BD16B3B005280A9 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				F49491732BC1A8DA00E6E89D /* FeedImageCellController.swift in Sources */,
 				F4E9CC312BCBDBAA001F87C0 /* FeedPresenter.swift in Sources */,
