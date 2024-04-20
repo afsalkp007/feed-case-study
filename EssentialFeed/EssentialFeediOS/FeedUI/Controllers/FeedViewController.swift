@@ -16,7 +16,7 @@ public final class ErrorView: UIView {
 }
 
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
-  public let errorView = ErrorView()
+  @IBOutlet private(set) public var errorView: ErrorView!
   
   private var onViewIsAppearing: ((FeedViewController) -> Void)?
   var delegate: FeedViewControllerDelegate?
