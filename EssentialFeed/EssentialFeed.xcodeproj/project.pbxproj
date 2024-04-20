@@ -84,6 +84,7 @@
 		F4ECA7742BD16BBD005280A9 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7732BD16BBD005280A9 /* FeedViewAdapter.swift */; };
 		F4ECA7942BD3BC4B005280A9 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7932BD3BC4B005280A9 /* FeedErrorViewModel.swift */; };
 		F4ECA7962BD3BE73005280A9 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7952BD3BE73005280A9 /* Localized.swift */; };
+		F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7992BD3F090005280A9 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,7 @@
 		F4ECA7732BD16BBD005280A9 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		F4ECA7932BD3BC4B005280A9 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
 		F4ECA7952BD3BE73005280A9 /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		F4ECA7992BD3F090005280A9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +444,7 @@
 				F439938F2BCEA74500D7C166 /* UIImageView+Animations.swift */,
 				F4E9CC4C2BCE6509001F87C0 /* Feed.storyboard */,
 				F4E9CC4E2BCE68BF001F87C0 /* Feed.xcassets */,
+				F4ECA7992BD3F090005280A9 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				F494916F2BC1513A00E6E89D /* FeedImageDataLoader.swift in Sources */,
 				F4E9CC412BCD8C56001F87C0 /* FeedImageViewModel.swift in Sources */,
 				F439938E2BCEA5B800D7C166 /* UITableView+Dequeueing.swift in Sources */,
+				F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */,
 				F49491552BBEDACA00E6E89D /* UIView+Shimmering.swift in Sources */,
 				F4ECA7962BD3BE73005280A9 /* Localized.swift in Sources */,
 				F4E9CC3B2BCC435C001F87C0 /* FeedLoadingViewModel.swift in Sources */,
