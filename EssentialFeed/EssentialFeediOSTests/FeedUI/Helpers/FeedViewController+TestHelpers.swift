@@ -93,6 +93,12 @@ extension FeedViewController {
   }
 }
 
+extension FeedViewController {
+  var errorMessage: String? {
+    return errorView?.message
+  }
+}
+
 private class FakeUIRefreshControl: UIRefreshControl {
   var _isRefreshing: Bool = false
   

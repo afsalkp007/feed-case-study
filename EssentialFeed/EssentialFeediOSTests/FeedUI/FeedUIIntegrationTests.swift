@@ -10,12 +10,6 @@ import UIKit
 import EssentialFeed
 import EssentialFeediOS
 
-extension FeedViewController {
-  var errorMessage: String? {
-    return errorView?.message
-  }
-}
-
 final class FeedUIIntegrationTests: XCTestCase {
   
   func test_feedView_hasTitle() {
