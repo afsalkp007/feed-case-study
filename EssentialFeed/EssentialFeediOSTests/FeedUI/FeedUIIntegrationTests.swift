@@ -10,6 +10,12 @@ import UIKit
 import EssentialFeed
 import EssentialFeediOS
 
+extension FeedViewController {
+  var errorMessage: String? {
+    return errorView?.message
+  }
+}
+
 final class FeedUIIntegrationTests: XCTestCase {
   
   func test_feedView_hasTitle() {
@@ -18,6 +24,14 @@ final class FeedUIIntegrationTests: XCTestCase {
     sut.loadViewIfNeeded()
 
     XCTAssertEqual(sut.title, localized("FEED_VIEW_TITLE"))
+  }
+  
+  func test_errorView_doesNotRenderFeedErrorOnLoad() {
+    let (sut, _) = makeSUT()
+
+    sut.loadViewIfNeeded()
+     
+    XCTAssertNil(sut.errorMessage)
   }
   
   func test_loadFeedActions_requestFeedFromLoader() {
