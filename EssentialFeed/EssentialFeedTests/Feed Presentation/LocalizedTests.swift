@@ -26,6 +26,15 @@ extension Localized {
         comment: "Title for the feed view"
       )
     }
+    
+    static var loadError: String {
+      return NSLocalizedString(
+        "FEED_VIEW_CONNECTION_ERROR",
+        tableName: feed,
+        bundle: Bundle(for: FeedPresenter.self),
+        comment: "Error message for the feed error view"
+      )
+    }
   }
 }
 
@@ -33,6 +42,10 @@ class LocalizedTests: XCTestCase {
   
   func test_Localized_title() {
     XCTAssertEqual(Localized.Feed.title, localized("FEED_VIEW_TITLE"))
+  }
+  
+  func test_Localized_loadError() {
+    XCTAssertEqual(Localized.Feed.loadError, localized("FEED_VIEW_CONNECTION_ERROR"))
   }
   
   // MARK: - Helpers
