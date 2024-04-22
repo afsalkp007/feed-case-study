@@ -30,6 +30,10 @@ struct FeedErrorViewModel {
   static var noError: FeedErrorViewModel {
     return FeedErrorViewModel(message: .none)
   }
+  
+  static func error(message: String) -> FeedErrorViewModel {
+    return FeedErrorViewModel(message: message)
+  }
 }
 
 protocol FeedErrorView {
@@ -71,20 +75,20 @@ final class FeedPresenter {
   }
   
   func didFinishLoadingFeed(with feed: [FeedImage]) {
-    feedView.display(FeedViewModel(feed: feed))
+    feedView.display(FeedViewModel(feed: feed))  
     loadingView.display(FeedLoadingViewModel(isLoading: false))
   }
   
   func didFinishLoadingFeed(with error: Error) {
     loadingView.display(FeedLoadingViewModel(isLoading: false))
-    errorView.display(FeedErrorViewModel(message: loadError))
+    errorView.display(.error(message: loadError))
   }
 }
 
 class FeedPresenterTests: XCTestCase {
   
   func test_title_isLocalized() {
-    XCTAssertEqual(FeedPresenter.title, localized("FEED_VIEW_TITLE"))
+    XCTAssertEqual(FeedPresenter.title, localized("FEED_VIEW_TITLE"), "Expected no view messages")
   }
   
   func test_init_doesNotSendMessage() {
@@ -149,7 +153,7 @@ class FeedPresenterTests: XCTestCase {
       case display(feed: [FeedImage])
     }
     
-    var messages = Set<Message>()
+    private(set) var messages = Set<Message>()
     
     func display(_ viewModel: FeedViewModel) {
       messages.insert(.display(feed: viewModel.feed))
