@@ -10,10 +10,6 @@ import EssentialFeed
 
 class FeedPresenterTests: XCTestCase {
   
-  func test_title_isLocalized() {
-    XCTAssertEqual(FeedPresenter.title, localized("FEED_VIEW_TITLE"), "Expected no view messages")
-  }
-  
   func test_init_doesNotSendMessage() {
     let (_, view) = makeSUT()
     
