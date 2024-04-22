@@ -23,7 +23,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
     self.imageTransformer = imageTransformer
   }
   
-  func didStartLoading(for model: FeedImage) {
+  func didStartLoadingWithImageData(for model: FeedImage) {
     view.display(FeedImageViewModel(
       description: model.description,
       location: model.location,
@@ -34,9 +34,9 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
   
   private struct InvalidImageError: Error {}
   
-  func didFinishLoading(with data: Data, for model: FeedImage) {
+  func didFinishLoadingWithImageData(with data: Data, for model: FeedImage) {
     guard let image = imageTransformer(data) else {
-      return didFinishLoading(with: InvalidImageError(), for: model)
+      return didFinishLoadingWithImageData(with: InvalidImageError(), for: model)
     }
     
     view.display(FeedImageViewModel(
@@ -47,7 +47,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
       shouldRetry: false))
   }
   
-  func didFinishLoading(with error: Error, for model: FeedImage) {
+  func didFinishLoadingWithImageData(with error: Error, for model: FeedImage) {
     view.display(FeedImageViewModel(
       description: model.description,
       location: model.location,
