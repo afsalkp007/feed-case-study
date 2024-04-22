@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import EssentialFeed
 
 struct FeedLoadingViewModel {
   let isLoading: Bool
@@ -69,19 +70,19 @@ class FeedPresenterTests: XCTestCase {
   }
   
   private final class ViewSpy: FeedLoadingView, FeedErrorView {
-    enum Message: Equatable {
+    enum Message: Hashable {
       case display(String?)
       case isLoading(Bool)
     }
     
-    var messages = [Message]()
+    var messages = Set<Message>()
     
     func display(_ viewModel: FeedErrorViewModel) {
-      messages.append(.display(.none))
+      messages.insert(.display(.none))
     }
     
     func display(_ viewModel: FeedLoadingViewModel) {
-      messages.append(.isLoading(true))
+      messages.insert(.isLoading(true))
     }
   }
 }
