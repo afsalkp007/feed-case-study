@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import EssentialFeed
 
 final class Localized {
   var bundle: Bundle {
