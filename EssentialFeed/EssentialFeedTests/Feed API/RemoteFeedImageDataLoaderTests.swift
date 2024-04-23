@@ -98,7 +98,6 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
     let nonEmptyData = Data("non-empty data".utf8)
     
     expect(sut, toCompleteWith: .success(nonEmptyData), when: {
-      let emptyData = Data()
       client.complete(withStatusCode: 200, data: nonEmptyData)
     })
   }
@@ -165,14 +164,20 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
   }
   
   private class HTTPClientSpy: HTTPClient {
+    private struct Task: HTTPClientTask {
+      func cancel() {}
+    }
+    
     private(set) var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+    private(set) var cancelledURLs = [URL]()
     
     var requestedURLs: [URL] {
       return messages.map(\.url)
     }
     
-    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
       messages.append((url, completion))
+      return Task()
     }
     
     func complete(with error: Error, at index: Int = 0) {
