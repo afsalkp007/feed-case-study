@@ -71,7 +71,7 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
     let samples = [199, 201, 300, 400, 500]
 
     samples.enumerated().forEach { index, code in
-      expect(sut, toCompleteWith: .failure(RemoteFeedImageDataLoader.Error.invalidData), when: {
+      expect(sut, toCompleteWith: failure(.invalidData), when: {
         client.complete(withStatusCode: code, data: anyData(), at: index)
       })
     }
@@ -80,7 +80,7 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
   func test_loadImageDataFromURL_deliversInvalidDataOn200HTTPResponseWithEmptyData() {
     let (sut, client) = makeSUT()
     
-    expect(sut, toCompleteWith: .failure(RemoteFeedImageDataLoader.Error.invalidData), when: {
+    expect(sut, toCompleteWith: failure(.invalidData), when: {
       let emptyData = Data()
       client.complete(withStatusCode: 200, data: emptyData)
     })
@@ -128,6 +128,10 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
     action()
     
     wait(for: [exp], timeout: 1.0)
+  }
+  
+  private func failure(_ error: RemoteFeedImageDataLoader.Error) -> FeedImageDataLoader.Result {
+    return .failure(error)
   }
   
   private class HTTPClientSpy: HTTPClient {
