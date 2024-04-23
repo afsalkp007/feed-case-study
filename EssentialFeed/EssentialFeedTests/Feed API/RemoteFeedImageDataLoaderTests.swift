@@ -17,8 +17,10 @@ class RemoteFeedImageDataLoader {
   
   func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) {
     client.get(from: url) { result in
-      if case let .failure(error) = result {
+      switch result {
+      case let .failure(error):
         completion(.failure(error))
+      default: break
       }
     }
   }
