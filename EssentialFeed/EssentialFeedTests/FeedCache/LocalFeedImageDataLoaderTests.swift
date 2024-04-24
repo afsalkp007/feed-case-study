@@ -48,7 +48,8 @@ final class LocalFeedImageDataLoader: FeedImageDataLoader {
   
   func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
     let task = Task(completion)
-    store.retrieve(dataForURL: url) { result in
+    store.retrieve(dataForURL: url) { [weak self] result in
+      guard self != nil else { return }
       
       task.complete(with: result
         .mapError { _ in Error.failed}
@@ -118,6 +119,19 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
     XCTAssertTrue(received.isEmpty, "Expected no recieved results after cancelling task")
   }
   
+  func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+    let store = StoreSpy()
+    var sut: LocalFeedImageDataLoader? = LocalFeedImageDataLoader(store: store)
+    
+    var received = [RemoteFeedImageDataLoader.Result]()
+    _ = sut?.loadImageData(from: anyURL()) { received.append($0) }
+    
+    sut = nil
+    store.complete(with: anyData())
+    
+    XCTAssertTrue(received.isEmpty, "Expected no received results after instance has been deallocated")
+  }
+  
   // MARK: - Helpers
   
   private func makeSUT(
@@ -125,9 +139,9 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
     line: UInt = #line
   ) -> (
     sut: LocalFeedImageDataLoader,
-    store: FeedStoreSpy
+    store: StoreSpy
   ) {
-    let store = FeedStoreSpy()
+    let store = StoreSpy()
     let sut = LocalFeedImageDataLoader(store: store)
     trackForMemoryLeaks(store, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
@@ -168,7 +182,7 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
   }
   
-  private class FeedStoreSpy: FeedImageDataStore {
+  private class StoreSpy: FeedImageDataStore {
     enum Message: Equatable {
       case retrieve(dataFor: URL)
     }
