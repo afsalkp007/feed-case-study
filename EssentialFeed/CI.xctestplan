@@ -12,14 +12,19 @@
     "codeCoverage" : {
       "targets" : [
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
           "identifier" : "F482E63C2B9C9B3B00373F93",
           "name" : "EssentialFeed"
         },
         {
-          "containerPath" : "container:EssentialFeed.xcodeproj",
+          "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
           "identifier" : "F4C630912BBB5A5A00C1FD7A",
           "name" : "EssentialFeediOS"
+        },
+        {
+          "containerPath" : "container:EssentialApp.xcodeproj",
+          "identifier" : "F47042752BDC0CD200C4A7EF",
+          "name" : "EssentialApp"
         }
       ]
     },
@@ -28,30 +33,37 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
         "identifier" : "F482E6442B9C9B3B00373F93",
         "name" : "EssentialFeedTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
         "identifier" : "F475D7EE2BA4E9E400208EDC",
         "name" : "EssentialFeedAPIEndToEndTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
         "identifier" : "F44958BE2BB5884B00727450",
         "name" : "EssentialFeedCacheIntegrationTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "containerPath" : "container:..\/EssentialFeed\/EssentialFeed.xcodeproj",
         "identifier" : "F4C630982BBB5A5A00C1FD7A",
         "name" : "EssentialFeediOSTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:EssentialApp.xcodeproj",
+        "identifier" : "F47042982BDCF96E00C4A7EF",
+        "name" : "EssentialAppTests"
       }
     }
   ],
