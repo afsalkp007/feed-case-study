@@ -10,13 +10,23 @@ import EssentialFeed
 
 class FeedLoaderWithFallbackComposite: FeedLoader {
   private let primary: FeedLoader
+  private let fallback: FeedLoader
   
   init(primary: FeedLoader, fallback: FeedLoader) {
     self.primary = primary
+    self.fallback = fallback
   }
   
   func load(completion: @escaping (FeedLoader.Result) -> Void) {
-    primary.load(completion: completion)
+    primary.load { [weak self] result in
+      switch result {
+      case let .success(feed):
+        completion(.success(feed))
+        
+      case .failure:
+        self?.fallback.load(completion: completion)
+      }
+    }
   }
 }
 
@@ -28,6 +38,14 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
     let sut = makeSUT(primaryResult: .success(primaryFeed), fallbackResult: .success(fallbackFeed))
     
     expect(sut, toCompleteWith: primaryFeed)
+  }
+  
+  func test_load_deliversFallbackFeedOnPrimaryLoaderFailure() {
+    let primaryFeed = uniqueFeed()
+    let fallbackFeed = uniqueFeed()
+    let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .success(fallbackFeed))
+    
+    expect(sut, toCompleteWith: fallbackFeed)
   }
   
   // MARK: - Helpers
@@ -61,6 +79,10 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
     addTeardownBlock { [weak instance] in
       XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
     }
+  }
+  
+  private func anyNSError() -> NSError {
+    return NSError(domain: "any error", code: 0)
   }
   
   private func uniqueFeed() -> [FeedImage] {
