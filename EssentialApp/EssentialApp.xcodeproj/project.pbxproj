@@ -17,7 +17,7 @@
 		F47042912BDC0DA700C4A7EF /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F470428E2BDC0DA700C4A7EF /* EssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F47042922BDC0DA700C4A7EF /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F470428F2BDC0DA700C4A7EF /* EssentialFeediOS.framework */; };
 		F47042932BDC0DA700C4A7EF /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F470428F2BDC0DA700C4A7EF /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F470429C2BDCF96F00C4A7EF /* RemoteWithLocalFallbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470429B2BDCF96F00C4A7EF /* RemoteWithLocalFallbackTests.swift */; };
+		F470429C2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470429B2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		F470428E2BDC0DA700C4A7EF /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F470428F2BDC0DA700C4A7EF /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47042992BDCF96E00C4A7EF /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F470429B2BDCF96F00C4A7EF /* RemoteWithLocalFallbackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWithLocalFallbackTests.swift; sourceTree = "<group>"; };
+		F470429B2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		F47042A22BDCFA3500C4A7EF /* EssentialAppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialAppTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F47042A22BDCFA3500C4A7EF /* EssentialAppTests.xctestplan */,
-				F470429B2BDCF96F00C4A7EF /* RemoteWithLocalFallbackTests.swift */,
+				F470429B2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F470429C2BDCF96F00C4A7EF /* RemoteWithLocalFallbackTests.swift in Sources */,
+				F470429C2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
