@@ -25,6 +25,7 @@
 		F470429C2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470429B2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift */; };
 		F4F21D222BDE3AD300D35625 /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D212BDE3AD300D35625 /* FeedLoaderCacheDecoratorTests.swift */; };
 		F4F21D242BDE433000D35625 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D232BDE433000D35625 /* FeedLoaderStub.swift */; };
+		F4F21D262BDE447D00D35625 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D252BDE447D00D35625 /* XCTestCase+FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F47042A22BDCFA3500C4A7EF /* EssentialAppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialAppTests.xctestplan; sourceTree = "<group>"; };
 		F4F21D212BDE3AD300D35625 /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		F4F21D232BDE433000D35625 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
+		F4F21D252BDE447D00D35625 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				F4403BAA2BDD39770020CF1B /* XCTestCase+MemoryLeakTracking.swift */,
 				F4403BAC2BDD39E70020CF1B /* SharedTestHelpers.swift */,
 				F4F21D232BDE433000D35625 /* FeedLoaderStub.swift */,
+				F4F21D252BDE447D00D35625 /* XCTestCase+FeedLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4403BAD2BDD39E70020CF1B /* SharedTestHelpers.swift in Sources */,
+				F4F21D262BDE447D00D35625 /* XCTestCase+FeedLoader.swift in Sources */,
 				F4F21D222BDE3AD300D35625 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				F4403BA42BDD09070020CF1B /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				F470429C2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
