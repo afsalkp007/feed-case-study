@@ -103,6 +103,7 @@
 		F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA7992BD3F090005280A9 /* ErrorView.swift */; };
 		F4ECA79D2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */; };
 		F4F21D282BDE524500D35625 /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D272BDE524500D35625 /* FeedCache.swift */; };
+		F4F21D2E2BDE6D6800D35625 /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D2D2BDE6D6800D35625 /* FeedImageDataCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +239,7 @@
 		F4ECA7992BD3F090005280A9 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
 		F4F21D272BDE524500D35625 /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
+		F4F21D2D2BDE6D6800D35625 /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -518,6 +520,7 @@
 				F482E6572B9C9C8100373F93 /* FeedLoader.swift */,
 				F494916E2BC1513A00E6E89D /* FeedImageDataLoader.swift */,
 				F4F21D272BDE524500D35625 /* FeedCache.swift */,
+				F4F21D2D2BDE6D6800D35625 /* FeedImageDataCache.swift */,
 			);
 			path = "Fead Feature";
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				F470421B2BD65BF400C4A7EF /* FeedPresenter.swift in Sources */,
 				F475D7EA2BA4DEA200208EDC /* URLSessionHTTPClient.swift in Sources */,
 				F42931662BB564F800886E1A /* ManagedCache.swift in Sources */,
+				F4F21D2E2BDE6D6800D35625 /* FeedImageDataCache.swift in Sources */,
 				F47042222BD65D9000C4A7EF /* FeedErrorViewModel.swift in Sources */,
 				F429315C2BB49F9900886E1A /* CoreDataFeedStore.swift in Sources */,
 				F47042352BD7A2A300C4A7EF /* RemoteFeedImageDataLoader.swift in Sources */,
