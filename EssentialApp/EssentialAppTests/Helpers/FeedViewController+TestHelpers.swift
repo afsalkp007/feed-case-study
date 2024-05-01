@@ -36,6 +36,10 @@ extension FeedViewController {
     ds?.tableView(tableView, prefetchRowsAt: [index])
   }
   
+  func renderedFeedImageData(at index: Int) -> Data? {
+    return simulateFeedImageViewVisible(at: index)?.renderedImage
+  }
+  
   func simulateFeedImageViewNotNearVisible(at row: Int) {
     simulateFeedImageViewNearVisible(at: row)
 
