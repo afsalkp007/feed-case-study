@@ -78,6 +78,8 @@
 		F482E6582B9C9C8100373F93 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482E6572B9C9C8100373F93 /* FeedLoader.swift */; };
 		F49491552BBEDACA00E6E89D /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49491542BBEDACA00E6E89D /* UIView+Shimmering.swift */; };
 		F49491732BC1A8DA00E6E89D /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49491722BC1A8DA00E6E89D /* FeedImageCellController.swift */; };
+		F494CD322BE262610004ECC1 /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494CD312BE262610004ECC1 /* FeedSnapshotTests.swift */; };
+		F494CD372BE270020004ECC1 /* UITableView+HeaderSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494CD362BE270020004ECC1 /* UITableView+HeaderSizing.swift */; };
 		F4C6309A2BBB5A5A00C1FD7A /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C630922BBB5A5A00C1FD7A /* EssentialFeediOS.framework */; };
 		F4CD51482BB5909D00C5C99B /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41546782BA70E09000C45A5 /* SharedTestHelpers.swift */; };
 		F4CD51492BB590B100C5C99B /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45B46892BA2248D0059E30E /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -198,6 +200,8 @@
 		F49491542BBEDACA00E6E89D /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		F494916E2BC1513A00E6E89D /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		F49491722BC1A8DA00E6E89D /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
+		F494CD312BE262610004ECC1 /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
+		F494CD362BE270020004ECC1 /* UITableView+HeaderSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+HeaderSizing.swift"; sourceTree = "<group>"; };
 		F4C630922BBB5A5A00C1FD7A /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C630992BBB5A5A00C1FD7A /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C630A72BBB5B0500C1FD7A /* EssentialFeediOSTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOSTests.xctestplan; sourceTree = "<group>"; };
@@ -523,6 +527,13 @@
 			path = FeedUI;
 			sourceTree = "<group>";
 		};
+		F494CD342BE265EE0004ECC1 /* snapshots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = snapshots;
+			sourceTree = "<group>";
+		};
 		F4C630932BBB5A5A00C1FD7A /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +546,8 @@
 			isa = PBXGroup;
 			children = (
 				F4C630A72BBB5B0500C1FD7A /* EssentialFeediOSTests.xctestplan */,
+				F494CD342BE265EE0004ECC1 /* snapshots */,
+				F494CD312BE262610004ECC1 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -546,6 +559,7 @@
 				F439938D2BCEA5B800D7C166 /* UITableView+Dequeueing.swift */,
 				F439938F2BCEA74500D7C166 /* UIImageView+Animations.swift */,
 				F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */,
+				F494CD362BE270020004ECC1 /* UITableView+HeaderSizing.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -881,6 +895,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F494CD372BE270020004ECC1 /* UITableView+HeaderSizing.swift in Sources */,
 				F439938E2BCEA5B800D7C166 /* UITableView+Dequeueing.swift in Sources */,
 				F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */,
 				F49491552BBEDACA00E6E89D /* UIView+Shimmering.swift in Sources */,
@@ -897,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F460F89B2BBB7F5B00CF1EA4 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
+				F494CD322BE262610004ECC1 /* FeedSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
