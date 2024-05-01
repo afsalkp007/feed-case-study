@@ -220,12 +220,12 @@
 				F4403BA92BDD396A0020CF1B /* Helpers */,
 				F47042A22BDCFA3500C4A7EF /* EssentialAppTests.xctestplan */,
 				F4E346DC2BE132B100120AB5 /* SceneDelegateTests.swift */,
+				F4E3474A2BE1484B00120AB5 /* FeedAcceptanceTests.swift */,
 				F4E347482BE13C1500120AB5 /* FeedUIIntegrationTests.swift */,
 				F470429B2BDCF96F00C4A7EF /* FeedLoaderWithFallbackCompositeTests.swift */,
 				F4403BA32BDD09070020CF1B /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				F4F21D212BDE3AD300D35625 /* FeedLoaderCacheDecoratorTests.swift */,
 				F4F21D2B2BDE544E00D35625 /* FeedImageDataLoaderCacheDecoratorTests.swift */,
-				F4E3474A2BE1484B00120AB5 /* FeedAcceptanceTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
