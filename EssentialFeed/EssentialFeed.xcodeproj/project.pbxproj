@@ -91,10 +91,6 @@
 		F4ECA79D2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */; };
 		F4F21D282BDE524500D35625 /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D272BDE524500D35625 /* FeedCache.swift */; };
 		F4F21D2E2BDE6D6800D35625 /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F21D2D2BDE6D6800D35625 /* FeedImageDataCache.swift */; };
-		F4F8D7F32BE636E700523AAA /* FEED_WITH_ERROR_MESSAGE.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D7EF2BE636E700523AAA /* FEED_WITH_ERROR_MESSAGE.png */; };
-		F4F8D7F42BE636E700523AAA /* EMPTY_FEED.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D7F02BE636E700523AAA /* EMPTY_FEED.png */; };
-		F4F8D7F52BE636E700523AAA /* FEED_WITH_FAILED_IMAGE_LOADING.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D7F12BE636E700523AAA /* FEED_WITH_FAILED_IMAGE_LOADING.png */; };
-		F4F8D7F62BE636E700523AAA /* FEED_WITH_CONTENT .png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D7F22BE636E700523AAA /* FEED_WITH_CONTENT .png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,10 +215,6 @@
 		F4F21D2D2BDE6D6800D35625 /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
 		F4F8D7E52BE5593D00523AAA /* CI_macOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_macOS.xctestplan; sourceTree = "<group>"; };
 		F4F8D7E62BE559B500523AAA /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
-		F4F8D7EF2BE636E700523AAA /* FEED_WITH_ERROR_MESSAGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_ERROR_MESSAGE.png; sourceTree = "<group>"; };
-		F4F8D7F02BE636E700523AAA /* EMPTY_FEED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EMPTY_FEED.png; sourceTree = "<group>"; };
-		F4F8D7F12BE636E700523AAA /* FEED_WITH_FAILED_IMAGE_LOADING.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_FAILED_IMAGE_LOADING.png; sourceTree = "<group>"; };
-		F4F8D7F22BE636E700523AAA /* FEED_WITH_CONTENT .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FEED_WITH_CONTENT .png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -542,10 +534,6 @@
 		F494CD342BE265EE0004ECC1 /* snapshots */ = {
 			isa = PBXGroup;
 			children = (
-				F4F8D7F02BE636E700523AAA /* EMPTY_FEED.png */,
-				F4F8D7F22BE636E700523AAA /* FEED_WITH_CONTENT .png */,
-				F4F8D7EF2BE636E700523AAA /* FEED_WITH_ERROR_MESSAGE.png */,
-				F4F8D7F12BE636E700523AAA /* FEED_WITH_FAILED_IMAGE_LOADING.png */,
 			);
 			path = snapshots;
 			sourceTree = "<group>";
@@ -818,10 +806,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4F8D7F32BE636E700523AAA /* FEED_WITH_ERROR_MESSAGE.png in Resources */,
-				F4F8D7F42BE636E700523AAA /* EMPTY_FEED.png in Resources */,
-				F4F8D7F62BE636E700523AAA /* FEED_WITH_CONTENT .png in Resources */,
-				F4F8D7F52BE636E700523AAA /* FEED_WITH_FAILED_IMAGE_LOADING.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
