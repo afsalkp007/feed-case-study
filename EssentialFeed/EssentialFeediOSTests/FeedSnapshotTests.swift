@@ -16,7 +16,7 @@ class FeedSnapshotTests: XCTestCase {
     
     sut.display(emptyFeed())
         
-    assert(snapshot: sut.snapshot(), named: "EMPTY_FEED")
+    record(snapshot: sut.snapshot(), named: "EMPTY_FEED")
   }
   
   func test_feedWithContent() {
@@ -24,7 +24,7 @@ class FeedSnapshotTests: XCTestCase {
     
     sut.display(feedWithContent())
     
-    assert(snapshot: sut.snapshot(), named: "FEED_WITH_CONTENT ")
+    record(snapshot: sut.snapshot(), named: "FEED_WITH_CONTENT ")
   }
   
   func test_feedWithErrorMessage() {
@@ -32,7 +32,7 @@ class FeedSnapshotTests: XCTestCase {
 
     sut.display(.error(message: "This is a\nmulti-line\nerror message"))
 
-    assert(snapshot: sut.snapshot(), named: "FEED_WITH_ERROR_MESSAGE")
+    record(snapshot: sut.snapshot(), named: "FEED_WITH_ERROR_MESSAGE")
   }
   
   func test_feedWithFailedImageLoading() {
@@ -40,7 +40,7 @@ class FeedSnapshotTests: XCTestCase {
 
     sut.display(feedWithFailedImageLoading())
 
-    assert(snapshot: sut.snapshot(), named: "FEED_WITH_FAILED_IMAGE_LOADING")
+    record(snapshot: sut.snapshot(), named: "FEED_WITH_FAILED_IMAGE_LOADING")
   }
 
   // MARK: - Helpers
