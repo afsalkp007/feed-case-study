@@ -1,6 +1,8 @@
 # Essential App Case Study
 
-[![CI](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI.yml/badge.svg)](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI.yml)
+[![CI_iOS](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI_iOS.yml/badge.svg)](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI_iOS.yml)
+
+[![CI_macOS](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI_macOS.yml/badge.svg)](https://github.com/afsalkp007/feed-case-study/actions/workflows/CI_macOS.yml)
 
 ## Image Feed Feature Specs
 
