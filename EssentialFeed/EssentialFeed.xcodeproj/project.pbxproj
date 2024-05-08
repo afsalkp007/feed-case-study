@@ -55,7 +55,6 @@
 		F470422E2BD695C800C4A7EF /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470422D2BD695C800C4A7EF /* Localized.swift */; };
 		F470422F2BD769A900C4A7EF /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F494916E2BC1513A00E6E89D /* FeedImageDataLoader.swift */; };
 		F47042312BD76A1100C4A7EF /* FeedImageDataMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47042302BD76A1100C4A7EF /* FeedImageDataMapperTests.swift */; };
-		F47042332BD7A1DD00C4A7EF /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47042322BD7A1DD00C4A7EF /* HTTPClientSpy.swift */; };
 		F47042382BD7AEE600C4A7EF /* HTTPURLResponse+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47042372BD7AEE600C4A7EF /* HTTPURLResponse+StatusCode.swift */; };
 		F470423B2BD7AFCA00C4A7EF /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470423A2BD7AFCA00C4A7EF /* URLProtocolStub.swift */; };
 		F470423D2BD7C49800C4A7EF /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470423C2BD7C49800C4A7EF /* LoadFeedImageDataFromCacheUseCaseTests.swift */; };
@@ -184,7 +183,6 @@
 		F470422B2BD6936A00C4A7EF /* LocalizedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedTests.swift; sourceTree = "<group>"; };
 		F470422D2BD695C800C4A7EF /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		F47042302BD76A1100C4A7EF /* FeedImageDataMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataMapperTests.swift; sourceTree = "<group>"; };
-		F47042322BD7A1DD00C4A7EF /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		F47042372BD7AEE600C4A7EF /* HTTPURLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCode.swift"; sourceTree = "<group>"; };
 		F470423A2BD7AFCA00C4A7EF /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		F470423C2BD7C49800C4A7EF /* LoadFeedImageDataFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedImageDataFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
@@ -312,14 +310,6 @@
 			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
-		F41492252BEA6C080018FC93 /* Shared API */ = {
-			isa = PBXGroup;
-			children = (
-				F414922B2BEB69380018FC93 /* Helpers */,
-			);
-			path = "Shared API";
-			sourceTree = "<group>";
-		};
 		F41492262BEA6C5F0018FC93 /* Shared API Infra */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,14 +333,6 @@
 				F41492182BEA5A7A0018FC93 /* ImageCommentsMapperTests.swift */,
 			);
 			path = "Image Comments API";
-			sourceTree = "<group>";
-		};
-		F414922B2BEB69380018FC93 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				F47042322BD7A1DD00C4A7EF /* HTTPClientSpy.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F41546752BA70A21000C45A5 /* FeedCache */ = {
@@ -564,7 +546,6 @@
 			children = (
 				F400E4B12BA5BB2300145483 /* EssentialFeedTests.xctestplan */,
 				F45B46882BA2246B0059E30E /* Helpers */,
-				F41492252BEA6C080018FC93 /* Shared API */,
 				F41492262BEA6C5F0018FC93 /* Shared API Infra */,
 				F41546752BA70A21000C45A5 /* FeedCache */,
 				F41492282BEABFEB0018FC93 /* Image Comments API */,
@@ -1001,7 +982,6 @@
 				F41546772BA70A79000C45A5 /* CacheFeedUseCaseTests.swift in Sources */,
 				F470422C2BD6936A00C4A7EF /* LocalizedTests.swift in Sources */,
 				F429315A2BB49D8700886E1A /* CoreDataFeedStoreTests.swift in Sources */,
-				F47042332BD7A1DD00C4A7EF /* HTTPClientSpy.swift in Sources */,
 				F42931522BB41FA100886E1A /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
