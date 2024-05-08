@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
   }()
   
-  private lazy var remoteFeedLoader: RemoteFeedLoader = {
-    RemoteFeedLoader(url: remoteURL, client: httpClient)
+  private lazy var remoteFeedLoader: RemoteLoader = {
+    RemoteLoader(url: remoteURL, client: httpClient, mapper: FeedItemsMapper.map)
   }()
 
   private lazy var store: FeedStore & FeedImageDataStore = {
@@ -83,6 +83,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 
 extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
-
-
-
