@@ -49,11 +49,16 @@ public class RemoteFeedImageDataLoader: FeedImageDataLoader {
       
       task.complete(with: result
         .mapError { _ in Error.connectivity }
-        .flatMap { data, response in
-          let isValidResponse = response.isOK && !data.isEmpty
-          return isValidResponse ? .success(data) : .failure(Error.invalidData)
-        })
+        .flatMap(RemoteFeedImageDataLoader.map))
     }
     return task
+  }
+  
+  private static func map(_ data: Data, from response: HTTPURLResponse) -> FeedImageDataLoader.Result {
+    do {
+      return .success(try FeedImageDataMapper.map(data, from: response))
+    } catch {
+      return .failure(error)
+    }
   }
 }
