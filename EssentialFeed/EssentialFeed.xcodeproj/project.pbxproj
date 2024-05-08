@@ -533,7 +533,7 @@
 		F482E63F2B9C9B3B00373F93 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				F4A46DC42BEBC3FE0070D0D4 /* Load Resource Presenter */,
+				F4A46DC42BEBC3FE0070D0D4 /* Shared Presentation */,
 				F41492232BEA6B9E0018FC93 /* Shared API */,
 				F41492242BEA6BC60018FC93 /* Shared API Infra */,
 				F41492202BEA64690018FC93 /* Image Comments Feature */,
@@ -635,12 +635,12 @@
 			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
-		F4A46DC42BEBC3FE0070D0D4 /* Load Resource Presenter */ = {
+		F4A46DC42BEBC3FE0070D0D4 /* Shared Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				F4A46DC22BEBC3BB0070D0D4 /* LoadResourcePresenter.swift */,
 			);
-			path = "Load Resource Presenter";
+			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
 		F4C630932BBB5A5A00C1FD7A /* EssentialFeediOS */ = {
