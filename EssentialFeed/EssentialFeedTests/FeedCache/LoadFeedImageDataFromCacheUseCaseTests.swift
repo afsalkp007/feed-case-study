@@ -70,7 +70,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
     let store = FeedImageDataStoreSpy()
     var sut: LocalFeedImageDataLoader? = LocalFeedImageDataLoader(store: store)
     
-    var received = [RemoteFeedImageDataLoader.Result]()
+    var received = [FeedImageDataLoader.Result]()
     _ = sut?.loadImageData(from: anyURL()) { received.append($0) }
     
     sut = nil
