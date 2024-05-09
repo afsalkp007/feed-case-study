@@ -28,7 +28,7 @@ extension Localized {
     
     public static var loadError: String {
       return NSLocalizedString(
-        "FEED_VIEW_CONNECTION_ERROR",
+        "GENERIC_CONNECTION_ERROR",
         tableName: feed,
         bundle: Bundle(for: FeedPresenter.self),
         comment: "Error message for the feed error view"

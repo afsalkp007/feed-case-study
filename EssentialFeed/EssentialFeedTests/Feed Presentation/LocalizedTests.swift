@@ -15,7 +15,7 @@ class LocalizedTests: XCTestCase {
   }
   
   func test_Localized_loadError() {
-    XCTAssertEqual(Localized.Feed.loadError, localized("FEED_VIEW_CONNECTION_ERROR"))
+    XCTAssertEqual(Localized.Feed.loadError, localized("GENERIC_CONNECTION_ERROR"))
   }
   
   // MARK: - Helpers
