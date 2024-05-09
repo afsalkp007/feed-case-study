@@ -108,6 +108,7 @@
 		F4FCBF572BECAA1300BE9EEB /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF562BECAA1300BE9EEB /* ImageCommentsPresenterTests.swift */; };
 		F4FCBF5A2BECAB2400BE9EEB /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF592BECAB2400BE9EEB /* ImageCommentsPresenter.swift */; };
 		F4FCBF5D2BECABFC00BE9EEB /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4FCBF5B2BECABFC00BE9EEB /* ImageComments.strings */; };
+		F4FCBF5F2BECAE6800BE9EEB /* ImageCommentsLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF5E2BECAE6800BE9EEB /* ImageCommentsLocalizationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,9 @@
 		F4FCBF562BECAA1300BE9EEB /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
 		F4FCBF592BECAB2400BE9EEB /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
 		F4FCBF5C2BECABFC00BE9EEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		F4FCBF5E2BECAE6800BE9EEB /* ImageCommentsLocalizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCommentsLocalizationTests.swift; sourceTree = "<group>"; };
+		F4FCBF602BECAEE900BE9EEB /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		F4FCBF612BECAEEA00BE9EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ImageComments.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FCBF562BECAA1300BE9EEB /* ImageCommentsPresenterTests.swift */,
+				F4FCBF5E2BECAE6800BE9EEB /* ImageCommentsLocalizationTests.swift */,
 			);
 			path = "Image Comments Presentation";
 			sourceTree = "<group>";
@@ -1040,6 +1045,7 @@
 				F47042312BD76A1100C4A7EF /* FeedImageDataMapperTests.swift in Sources */,
 				F4A46DD62BEC71490070D0D4 /* SharedLocalizationTests.swift in Sources */,
 				F4458E262BA99400008E710B /* FeedStoreSpy.swift in Sources */,
+				F4FCBF5F2BECAE6800BE9EEB /* ImageCommentsLocalizationTests.swift in Sources */,
 				F42931582BB446CF00886E1A /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 				F42931542BB4445600886E1A /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				F470423D2BD7C49800C4A7EF /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */,
@@ -1130,6 +1136,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				F4FCBF5C2BECABFC00BE9EEB /* en */,
+				F4FCBF602BECAEE900BE9EEB /* el */,
+				F4FCBF612BECAEEA00BE9EEB /* pt-BR */,
 			);
 			name = ImageComments.strings;
 			sourceTree = "<group>";
