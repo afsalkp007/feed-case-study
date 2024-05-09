@@ -55,11 +55,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
   }
   
   public func display(_ viewModel: ResourceErrorViewModel) {
-    if let message = viewModel.message {
-      errorView.message = message
-    } else {
-      errorView.message = .none
-    }
+    errorView.message = viewModel.message
   }
   
   @IBAction func refresh() {
