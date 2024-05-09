@@ -679,8 +679,7 @@
 			children = (
 				F4C630A72BBB5B0500C1FD7A /* EssentialFeediOSTests.xctestplan */,
 				F494CD382BE2731D0004ECC1 /* Helpers */,
-				F494CD342BE265EE0004ECC1 /* snapshots */,
-				F494CD312BE262610004ECC1 /* FeedSnapshotTests.swift */,
+				F4FCBF622BECC2CF00BE9EEB /* Feed UI */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -713,6 +712,15 @@
 				F4FCBF5B2BECABFC00BE9EEB /* ImageComments.strings */,
 			);
 			path = "Image Comments Presentation";
+			sourceTree = "<group>";
+		};
+		F4FCBF622BECC2CF00BE9EEB /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				F494CD342BE265EE0004ECC1 /* snapshots */,
+				F494CD312BE262610004ECC1 /* FeedSnapshotTests.swift */,
+			);
+			path = "Feed UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
