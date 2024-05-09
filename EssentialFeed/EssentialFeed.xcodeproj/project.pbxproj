@@ -102,6 +102,7 @@
 		F4F8D9742BE8406E00523AAA /* EMPTY_FEED_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D96C2BE8406E00523AAA /* EMPTY_FEED_dark.png */; };
 		F4F8D9752BE8406E00523AAA /* FEED_WITH_ERROR_MESSAGE_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F4F8D96D2BE8406E00523AAA /* FEED_WITH_ERROR_MESSAGE_dark.png */; };
 		F4FCBF4C2BEC735D00BE9EEB /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4FCBF4A2BEC735D00BE9EEB /* Shared.strings */; };
+		F4FCBF502BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF4F2BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,7 @@
 		F4FCBF4B2BEC735D00BE9EEB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		F4FCBF4D2BEC738B00BE9EEB /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
 		F4FCBF4E2BEC738F00BE9EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
+		F4FCBF4F2BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +423,7 @@
 				F45B46892BA2248D0059E30E /* XCTestCase+MemoryLeakTracking.swift */,
 				F41546782BA70E09000C45A5 /* SharedTestHelpers.swift */,
 				F4458E252BA99400008E710B /* FeedStoreSpy.swift */,
+				F4FCBF4F2BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -983,6 +986,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4829CD32BA04F30002B7F9D /* FeedItemsMapperTests.swift in Sources */,
+				F4FCBF502BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift in Sources */,
 				F4829CDD2BA1BB69002B7F9D /* URLSessionHTTPClientTests.swift in Sources */,
 				F47042062BD54BA400C4A7EF /* FeedPresenterTests.swift in Sources */,
 				F470423B2BD7AFCA00C4A7EF /* URLProtocolStub.swift in Sources */,
