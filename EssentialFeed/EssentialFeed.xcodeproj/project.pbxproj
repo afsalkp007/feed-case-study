@@ -434,8 +434,8 @@
 		F45B46882BA2246B0059E30E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F45B46892BA2248D0059E30E /* XCTestCase+MemoryLeakTracking.swift */,
 				F41546782BA70E09000C45A5 /* SharedTestHelpers.swift */,
+				F45B46892BA2248D0059E30E /* XCTestCase+MemoryLeakTracking.swift */,
 				F4458E252BA99400008E710B /* FeedStoreSpy.swift */,
 				F4FCBF4F2BEC76D000BE9EEB /* SharedLocalizationTestHelpers.swift */,
 			);
