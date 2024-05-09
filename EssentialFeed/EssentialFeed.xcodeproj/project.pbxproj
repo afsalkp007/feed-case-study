@@ -116,6 +116,7 @@
 		F4FCBF7C2BECCD9900BE9EEB /* IMAGE_COMMENTS_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FCBF792BECCD9900BE9EEB /* IMAGE_COMMENTS_dark.png */; };
 		F4FCBF7D2BECCD9900BE9EEB /* IMAGE_COMMENTS_light.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FCBF7A2BECCD9900BE9EEB /* IMAGE_COMMENTS_light.png */; };
 		F4FCBF7F2BECCE6B00BE9EEB /* ImageCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF7E2BECCE6B00BE9EEB /* ImageCommentCell.swift */; };
+		F4FCBF812BED12BB00BE9EEB /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF802BED12BB00BE9EEB /* CellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,6 +270,7 @@
 		F4FCBF792BECCD9900BE9EEB /* IMAGE_COMMENTS_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_dark.png; sourceTree = "<group>"; };
 		F4FCBF7A2BECCD9900BE9EEB /* IMAGE_COMMENTS_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMAGE_COMMENTS_light.png; sourceTree = "<group>"; };
 		F4FCBF7E2BECCE6B00BE9EEB /* ImageCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentCell.swift; sourceTree = "<group>"; };
+		F4FCBF802BED12BB00BE9EEB /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -745,6 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				F460F89C2BBC1BD800CF1EA4 /* ListViewController.swift */,
+				F4FCBF802BED12BB00BE9EEB /* CellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1185,6 +1188,7 @@
 				F494CD372BE270020004ECC1 /* UITableView+HeaderSizing.swift in Sources */,
 				F439938E2BCEA5B800D7C166 /* UITableView+Dequeueing.swift in Sources */,
 				F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */,
+				F4FCBF812BED12BB00BE9EEB /* CellController.swift in Sources */,
 				F49491552BBEDACA00E6E89D /* UIView+Shimmering.swift in Sources */,
 				F460F89D2BBC1BD800CF1EA4 /* ListViewController.swift in Sources */,
 				F43993902BCEA74500D7C166 /* UIImageView+Animations.swift in Sources */,
