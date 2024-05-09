@@ -46,16 +46,20 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
   
   // MARK: - Helpers
   
-  private func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> FeedLoader.Result? {
-    let client = ephemeralClient(file: file, line: line)
-    let loader = RemoteFeedLoader(url: feedTestServerURL, client: client)
-    trackForMemoryLeaks(loader, file: file, line: line)
-    
+  private func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> Swift.Result<[FeedImage], Error>? {
+    let client = ephemeralClient(file: file, line: line)    
     let exp = expectation(description: "Wait for load completion")
     
-    var receivedResult: FeedLoader.Result?
-    loader.load { result in
-      receivedResult = result
+    var receivedResult: Swift.Result<[FeedImage], Error>?
+    
+    client.get(from: feedTestServerURL) { result in
+      receivedResult = result.flatMap { (data, response) in
+        do {
+          return .success(try FeedItemsMapper.map(data, from: response))
+        } catch {
+          return .failure(error)
+        }
+      }
       exp.fulfill()
     }
     wait(for: [exp], timeout: 10.0)
@@ -65,14 +69,18 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
   private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> FeedImageDataLoader.Result? {
     let url = feedTestServerURL.appending(component: "73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
     let client = ephemeralClient(file: file, line: line)
-    let loader = RemoteFeedImageDataLoader(client: client)
-    trackForMemoryLeaks(loader, file: file, line: line)
     
     let exp = expectation(description: "Wait for load completion")
     
     var recievedResult: FeedImageDataLoader.Result?
-    _ = loader.loadImageData(from: url) { result in
-      recievedResult = result
+    client.get(from: url) { result in
+      recievedResult = result.flatMap { (data, response) in
+        do {
+          return .success(try FeedImageDataMapper.map(data, from: response))
+        } catch {
+          return .failure(error)
+        }
+      }
       exp.fulfill()
     }
     wait(for: [exp], timeout: 5.0)

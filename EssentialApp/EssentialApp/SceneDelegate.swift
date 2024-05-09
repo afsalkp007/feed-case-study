@@ -19,10 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   private lazy var httpClient: HTTPClient = {
     URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
   }()
-  
-  private lazy var remoteFeedLoader: RemoteFeedLoader = {
-    RemoteFeedLoader(url: remoteURL, client: httpClient)
-  }()
 
   private lazy var store: FeedStore & FeedImageDataStore = {
     try! CoreDataFeedStore(
@@ -61,26 +57,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     localFeedLoader.validateCache { _ in }
   }
   
-  private func makeRemoteFeedLaoderWithLocalFallback() -> FeedLoader.Publisher {
-    return remoteFeedLoader
-      .loadPublisher()
+  private func makeRemoteFeedLaoderWithLocalFallback() -> AnyPublisher<[FeedImage], Error> {
+    return httpClient
+      .getPublisher(url: remoteURL)
+      .tryMap(FeedItemsMapper.map)
       .caching(to: localFeedLoader)
       .fallback(to: localFeedLoader.loadPublisher)
   }
   
   private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
-      let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
-      let localImageLoader = LocalFeedImageDataLoader(store: store)
-
-      return localImageLoader
-          .loadImageDataPublisher(from: url)
-          .fallback(to: {
-              remoteImageLoader
-                  .loadImageDataPublisher(from: url)
-                  .caching(to: localImageLoader, using: url)
-          })
+    let localImageLoader = LocalFeedImageDataLoader(store: store)
+    
+    return localImageLoader
+      .loadImageDataPublisher(from: url)
+      .fallback(to: { [httpClient] in
+        httpClient
+          .getPublisher(url: url)
+          .tryMap(FeedImageDataMapper.map)
+          .caching(to: localImageLoader, using: url)
+      })
   }
 }
-
-
-
