@@ -40,6 +40,10 @@ extension ListViewController {
     return simulateFeedImageViewVisible(at: index)?.renderedImage
   }
   
+  func simulateErrorViewTap() {
+      errorView.simulateTap()
+  }
+  
   func simulateFeedImageViewNotNearVisible(at row: Int) {
     simulateFeedImageViewNearVisible(at: row)
 
