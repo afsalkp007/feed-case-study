@@ -24,19 +24,17 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
   public override func viewDidLoad() {
     super.viewDidLoad()
         
-    dataSource.defaultRowAnimation = .fade
-    tableView.dataSource = dataSource
-    configureErrorView()
+    configureTableView()
     onViewIsAppearing = { vc in
       vc.refresh()
       vc.onViewIsAppearing = nil
     }
   }
   
-  private func configureErrorView() {
-    let container = errorView.makeContainer()
-    
-    tableView.tableHeaderView = container
+  private func configureTableView() {
+    dataSource.defaultRowAnimation = .fade
+    tableView.dataSource = dataSource
+    tableView.tableHeaderView = errorView.makeContainer()
     
     errorView.onHide = { [weak self] in
       self?.tableView.beginUpdates()
