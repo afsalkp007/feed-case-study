@@ -1,5 +1,5 @@
 //
-//  FeedViewController+TestHelpers.swift
+//  ListViewController+TestHelpers.swift
 //  EssentialFeediOSTests
 //
 //  Created by Afsal on 06/04/2024.
@@ -12,6 +12,18 @@ import EssentialFeediOS
 extension ListViewController {
   func simulateUserInitiatedFeedReload() {
     refreshControl?.simulatePullToRefresh()
+  }
+  
+  var isShowingLoadingIndicator: Bool {
+    return refreshControl?.isRefreshing == true
+  }
+  
+  func simulateErrorViewTap() {
+      errorView.simulateTap()
+  }
+
+  var errorMessage: String? {
+    return errorView.message
   }
   
   @discardableResult
@@ -39,11 +51,7 @@ extension ListViewController {
   func renderedFeedImageData(at index: Int) -> Data? {
     return simulateFeedImageViewVisible(at: index)?.renderedImage
   }
-  
-  func simulateErrorViewTap() {
-      errorView.simulateTap()
-  }
-  
+    
   func simulateFeedImageViewNotNearVisible(at row: Int) {
     simulateFeedImageViewNearVisible(at: row)
 
@@ -51,11 +59,7 @@ extension ListViewController {
     let index = IndexPath(row: row, section: feedImagesSection)
     ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
   }
-  
-  var isShowingLoadingIndicator: Bool {
-    return refreshControl?.isRefreshing == true
-  }
-  
+    
   func numberOfRenderedFeedImageViews() -> Int {
     return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
   }
@@ -101,12 +105,6 @@ extension ListViewController {
     }
     
     refreshControl = fakeRefreshControl
-  }
-}
-
-extension ListViewController {
-  var errorMessage: String? {
-    return errorView.message
   }
 }
 

@@ -12,7 +12,6 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
   private(set) public var errorView = ErrorView()
   
   private var onViewIsAppearing: ((ListViewController) -> Void)?
-  
   public var onRefresh: (() -> Void)?
   
   private lazy var dataSource: UITableViewDiffableDataSource<Int, CellController> = {
@@ -27,9 +26,15 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     configureTableView()
     configureTraitCollectionObservers()
     onViewIsAppearing = { vc in
-      vc.refresh()
       vc.onViewIsAppearing = nil
+      vc.refresh()
     }
+  }
+  
+  public override func viewIsAppearing(_ animated: Bool) {
+    super.viewIsAppearing(animated)
+    
+    onViewIsAppearing?(self)
   }
   
   private func configureTableView() {
@@ -57,13 +62,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     
     tableView.sizeTableHeaderToFit()
   }
-  
-  public override func viewIsAppearing(_ animated: Bool) {
-    super.viewIsAppearing(animated)
     
-    onViewIsAppearing?(self)
-  }
-  
   public func display(_ cellControllers: [CellController]) {
     var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
     snapshot.appendSections([0])
