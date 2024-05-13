@@ -57,7 +57,7 @@ extension ListViewController {
   }
   
   func numberOfRenderedFeedImageViews() -> Int {
-    tableView.numberOfRows(inSection: feedImagesSection)
+    return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
   }
   
   var feedImagesSection: Int {
