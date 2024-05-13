@@ -118,6 +118,7 @@
 		F4FCBF7F2BECCE6B00BE9EEB /* ImageCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF7E2BECCE6B00BE9EEB /* ImageCommentCell.swift */; };
 		F4FCBF812BED12BB00BE9EEB /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF802BED12BB00BE9EEB /* CellController.swift */; };
 		F4FCBF832BF1FDFE00BE9EEB /* FEED_WITH_CONTENT_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FCBF822BF1FDFE00BE9EEB /* FEED_WITH_CONTENT_light_extraExtraExtraLarge.png */; };
+		F4FCBF852BF20C8400BE9EEB /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCBF842BF20C8400BE9EEB /* UIView+Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +274,7 @@
 		F4FCBF7E2BECCE6B00BE9EEB /* ImageCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentCell.swift; sourceTree = "<group>"; };
 		F4FCBF802BED12BB00BE9EEB /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		F4FCBF822BF1FDFE00BE9EEB /* FEED_WITH_CONTENT_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_CONTENT_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
+		F4FCBF842BF20C8400BE9EEB /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -770,6 +772,7 @@
 				F439938D2BCEA5B800D7C166 /* UITableView+Dequeueing.swift */,
 				F4ECA79C2BD3F42D005280A9 /* UIRefreshControl+Helpers.swift */,
 				F494CD362BE270020004ECC1 /* UITableView+HeaderSizing.swift */,
+				F4FCBF842BF20C8400BE9EEB /* UIView+Container.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				F494CD372BE270020004ECC1 /* UITableView+HeaderSizing.swift in Sources */,
 				F439938E2BCEA5B800D7C166 /* UITableView+Dequeueing.swift in Sources */,
 				F4ECA79A2BD3F090005280A9 /* ErrorView.swift in Sources */,
+				F4FCBF852BF20C8400BE9EEB /* UIView+Container.swift in Sources */,
 				F4FCBF812BED12BB00BE9EEB /* CellController.swift in Sources */,
 				F49491552BBEDACA00E6E89D /* UIView+Shimmering.swift in Sources */,
 				F460F89D2BBC1BD800CF1EA4 /* ListViewController.swift in Sources */,
