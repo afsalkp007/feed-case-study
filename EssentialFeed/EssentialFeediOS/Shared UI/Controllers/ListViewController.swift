@@ -31,8 +31,8 @@ public final class ListViewController: UITableViewController {
     }
   }
   
-  public override func viewIsAppearing(_ animated: Bool) {
-    super.viewIsAppearing(animated)
+  public override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
     onViewIsAppearing?(self)
   }
