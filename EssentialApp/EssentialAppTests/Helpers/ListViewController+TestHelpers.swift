@@ -25,11 +25,24 @@ extension ListViewController {
   var errorMessage: String? {
     return errorView.message
   }
+  
+  func numberOfRows(in section: Int) -> Int {
+    tableView.numberOfSections > section ? tableView.numberOfRows(inSection: section) : 0
+  }
+  
+  func cell(row: Int, section: Int) -> UITableViewCell? {
+    guard numberOfRows(in: section) > row else {
+      return nil
+    }
+    let ds = tableView.dataSource
+    let index = IndexPath(row: row, section: section)
+    return ds?.tableView(tableView, cellForRowAt: index)
+  }
 }
 
 extension ListViewController {
   func numberOfRenderedComments() -> Int {
-    return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: commentsSection)
+    numberOfRows(in: commentsSection)
   }
   
   func commentMessage(at row: Int) -> String? {
@@ -45,17 +58,10 @@ extension ListViewController {
   }
   
   private func commentView(at row: Int) -> ImageCommentCell? {
-    guard numberOfRenderedComments() > row else {
-      return nil
-    }
-    let ds = tableView.dataSource
-    let index = IndexPath(row: row, section: commentsSection)
-    return ds?.tableView(tableView, cellForRowAt: index) as? ImageCommentCell
+    cell(row: row, section: commentsSection) as? ImageCommentCell
   }
   
-  var commentsSection: Int {
-    return 0
-  }
+  var commentsSection: Int { 0 }
 }
  
 extension ListViewController {
@@ -100,20 +106,13 @@ extension ListViewController {
   }
   
   func numberOfRenderedFeedImageViews() -> Int {
-    return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
+    numberOfRows(in: feedImagesSection)
   }
   
-  var feedImagesSection: Int {
-    return 0
-  }
+  var feedImagesSection: Int { 0 }
   
   func feedImageView(at row: Int) -> UITableViewCell? {
-    guard numberOfRenderedFeedImageViews() > row else {
-      return nil
-    }
-    let ds = tableView.dataSource
-    let index = IndexPath(row: row, section: feedImagesSection)
-    return ds?.tableView(tableView, cellForRowAt: index)
+    cell(row: row, section: feedImagesSection)
   }
 }
  
