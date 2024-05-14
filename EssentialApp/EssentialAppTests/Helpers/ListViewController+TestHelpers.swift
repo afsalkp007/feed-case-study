@@ -19,13 +19,46 @@ extension ListViewController {
   }
   
   func simulateErrorViewTap() {
-      errorView.simulateTap()
+    errorView.simulateTap()
   }
-
+  
   var errorMessage: String? {
     return errorView.message
   }
+}
+
+extension ListViewController {
+  func numberOfRenderedComments() -> Int {
+    return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: commentsSection)
+  }
   
+  func commentMessage(at row: Int) -> String? {
+    commentView(at: row)?.messageLabel.text
+  }
+  
+  func commentDate(at row: Int) -> String? {
+    commentView(at: row)?.dateLabel.text
+  }
+  
+  func commentUsername(at row: Int) -> String? {
+    commentView(at: row)?.usernameLabel.text
+  }
+  
+  private func commentView(at row: Int) -> ImageCommentCell? {
+    guard numberOfRenderedComments() > row else {
+      return nil
+    }
+    let ds = tableView.dataSource
+    let index = IndexPath(row: row, section: commentsSection)
+    return ds?.tableView(tableView, cellForRowAt: index) as? ImageCommentCell
+  }
+  
+  var commentsSection: Int {
+    return 0
+  }
+}
+ 
+extension ListViewController {
   @discardableResult
   func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
     return feedImageView(at: index) as? FeedImageCell
@@ -51,15 +84,15 @@ extension ListViewController {
   func renderedFeedImageData(at index: Int) -> Data? {
     return simulateFeedImageViewVisible(at: index)?.renderedImage
   }
-    
+  
   func simulateFeedImageViewNotNearVisible(at row: Int) {
     simulateFeedImageViewNearVisible(at: row)
-
+    
     let ds = tableView.prefetchDataSource
     let index = IndexPath(row: row, section: feedImagesSection)
     ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
   }
-    
+  
   func numberOfRenderedFeedImageViews() -> Int {
     return tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
   }
@@ -76,7 +109,9 @@ extension ListViewController {
     let index = IndexPath(row: row, section: feedImagesSection)
     return ds?.tableView(tableView, cellForRowAt: index)
   }
-  
+}
+ 
+extension ListViewController {
   func simulateAppearance() {
     if !isViewLoaded {
       loadViewIfNeeded()

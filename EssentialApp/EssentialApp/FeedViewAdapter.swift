@@ -43,6 +43,20 @@ final class FeedViewAdapter: ResourceView {
   }
 }
 
+final class CommentsViewAdapter: ResourceView {
+  private weak var controller: ListViewController?
+  
+  init(controller: ListViewController) {
+    self.controller = controller
+  }
+  
+  public func display(_ viewModel: ImageCommentsViewModel) {
+    controller?.display(viewModel.comments.map { viewModel in
+      CellController(id: viewModel, ImageCommentCellController(model: viewModel))
+    })
+  }
+}
+
 private extension UIImage {
   struct InvalidImageData: Error {}
 
