@@ -5,8 +5,6 @@
 //  Created by Afsal on 18/04/2024.
 //
 
-import Foundation
-import XCTest
 import EssentialFeed
 
 extension FeedUIIntegrationTests {
@@ -20,5 +18,9 @@ extension FeedUIIntegrationTests {
   
   var feedTitle: String {
     FeedPresenter.title
+  }
+  
+  var commentsTitle: String {
+    ImageCommentsPresenter.title
   }
 }
