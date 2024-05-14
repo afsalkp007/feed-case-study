@@ -8,7 +8,7 @@
 import UIKit
 import EssentialFeed
 
-public final class ListViewController: UITableViewController, UITableViewDataSourcePrefetching, ResourceLoadingView, ResourceErrorView {
+public final class ListViewController: UITableViewController {
   private(set) public var errorView = ErrorView()
   
   private var onViewIsAppearing: ((ListViewController) -> Void)?
@@ -22,7 +22,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
   
   public override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
     configureTableView()
     configureTraitCollectionObservers()
     onViewIsAppearing = { vc in
@@ -62,7 +62,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     
     tableView.sizeTableHeaderToFit()
   }
-    
+  
   public func display(_ cellControllers: [CellController]) {
     var snapshot = NSDiffableDataSourceSnapshot<Int, CellController>()
     snapshot.appendSections([0])
@@ -70,6 +70,12 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     dataSource.applySnapshotUsingReloadData(snapshot)
   }
   
+  @IBAction func refresh() {
+    onRefresh?()
+  }
+}
+ 
+extension ListViewController: ResourceLoadingView, ResourceErrorView {
   public func display(_ viewModel: ResourceLoadingViewModel) {
     refreshControl?.update(viewModel.isLoading)
   }
@@ -77,9 +83,12 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
   public func display(_ viewModel: ResourceErrorViewModel) {
     errorView.message = viewModel.message
   }
-  
-  @IBAction func refresh() {
-    onRefresh?()
+}
+ 
+extension ListViewController: UITableViewDataSourcePrefetching {
+  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let dl = cellController(at: indexPath)?.delegate
+    dl?.tableView?(tableView, didSelectRowAt: indexPath)
   }
     
   public override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
