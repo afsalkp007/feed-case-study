@@ -20,20 +20,7 @@ class FeedUIIntegrationTests: XCTestCase {
 
     XCTAssertEqual(sut.title, feedTitle)
   }
-  
-  func test_errorView_rendersErrorMessageOnErrorUntilNextReload() {
-    let (sut, loader) = makeSUT()
-
-    sut.simulateAppearance()
-    XCTAssertNil(sut.errorMessage)
-
-    loader.completeFeedLoadingWithError()
-    XCTAssertEqual(sut.errorMessage, loadError)
     
-    sut.simulateUserInitiatedReload()
-    XCTAssertNil(sut.errorMessage)
-  }
-  
   func test_loadFeedActions_requestFeedFromLoader() {
     let (sut, loader) = makeSUT()
     XCTAssertEqual(loader.loadFeedCallCount, 0, "Expected no loading requests before view is loaded")
@@ -105,6 +92,19 @@ class FeedUIIntegrationTests: XCTestCase {
       exp.fulfill()
     }
     wait(for: [exp], timeout: 1.0)
+  }
+  
+  func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
+    let (sut, loader) = makeSUT()
+
+    sut.simulateAppearance()
+    XCTAssertNil(sut.errorMessage)
+
+    loader.completeFeedLoadingWithError(at: 0)
+    XCTAssertEqual(sut.errorMessage, loadError)
+    
+    sut.simulateUserInitiatedReload()
+    XCTAssertNil(sut.errorMessage)
   }
   
   func test_tapOnErrorView_hidesErrorMessage() {

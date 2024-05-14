@@ -12,7 +12,7 @@ import EssentialApp
 import EssentialFeed
 import EssentialFeediOS
 
-final class CommentsUIIntegrationTests: FeedUIIntegrationTests {
+final class CommentsUIIntegrationTests: XCTestCase {
   
   func test_commentsView_hasTitle() {
     let (sut, _) = makeSUT()
@@ -106,7 +106,20 @@ final class CommentsUIIntegrationTests: FeedUIIntegrationTests {
     wait(for: [exp], timeout: 1.0)
   }
   
-  override func test_tapOnErrorView_hidesErrorMessage() {
+  func test_loadCommentsCompletion_rendersErrorMessageOnErrorUntilNextReload() {
+    let (sut, loader) = makeSUT()
+
+    sut.simulateAppearance()
+    XCTAssertNil(sut.errorMessage)
+
+    loader.completeCommentsLoadingWithError(at: 0)
+    XCTAssertEqual(sut.errorMessage, loadError)
+    
+    sut.simulateUserInitiatedReload()
+    XCTAssertNil(sut.errorMessage)
+  }
+  
+  func test_tapOnErrorView_hidesErrorMessage() {
     let (sut, loader) = makeSUT()
     
     sut.simulateAppearance()
