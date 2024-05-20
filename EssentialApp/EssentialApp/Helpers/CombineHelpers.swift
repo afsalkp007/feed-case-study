@@ -119,13 +119,13 @@ extension Publisher {
 
 extension Publisher {
   func dispatchOnMainQueue() -> AnyPublisher<Output, Failure> {
-    receive(on: DispatchQueue.immediateWhenOnMainScheduler).eraseToAnyPublisher()
+    receive(on: DispatchQueue.immediateWhenOnMainQueueScheduler).eraseToAnyPublisher()
   }
 }
 
 extension DispatchQueue {
   
-  static var immediateWhenOnMainScheduler: ImmediateWhenOnMainQueueScheduler {
+  static var immediateWhenOnMainQueueScheduler: ImmediateWhenOnMainQueueScheduler {
     ImmediateWhenOnMainQueueScheduler.shared
   }
   
