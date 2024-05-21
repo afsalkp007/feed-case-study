@@ -77,13 +77,17 @@ class CacheFeedUseCaseTests: XCTestCase {
   
   private func expect(_ sut: LocalFeedLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
     action()
+    
+    var receivedError: NSError?
 
     let items = [uniqueImage(), uniqueImage()]
     
     do {
       try sut.save(items)
     } catch {
-      XCTAssertEqual(error as NSError?, expectedError, file: file, line: line)
+      receivedError = error as NSError?
     }
+    
+    XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
   }
 }
