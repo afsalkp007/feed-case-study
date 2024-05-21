@@ -66,13 +66,13 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
     return receivedResult
   }
   
-  private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> FeedImageDataLoader.Result? {
+  private func getFeedImageDataResult(file: StaticString = #filePath, line: UInt = #line) -> Result<Data, Error>? {
     let url = feedTestServerURL.appending(component: "73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6/image")
     let client = ephemeralClient(file: file, line: line)
     
     let exp = expectation(description: "Wait for load completion")
     
-    var recievedResult: FeedImageDataLoader.Result?
+    var recievedResult: Result<Data, Error>?
     client.get(from: url) { result in
       recievedResult = result.flatMap { (data, response) in
         do {
