@@ -72,7 +72,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
   
   func sceneWillResignActive(_ scene: UIScene) {
-    localFeedLoader.validateCache { _ in }
+    do {
+      try localFeedLoader.validateCache()
+    } catch {
+      logger.error("Failed to validate cache with error: \(error.localizedDescription)")
+    }
   }
   
   private func showComments(for image: FeedImage) {
@@ -95,6 +99,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       .caching(to: localFeedLoader)
       .fallback(to: localFeedLoader.loadPublisher)
       .map(makeFirstPage)
+      .subscribe(on: scheduler)
       .eraseToAnyPublisher()
   }
   
@@ -103,8 +108,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       .zip(makeRemoteFeedLoader(after: last))
       .map { (cachedItems, newItems) in
         (cachedItems + newItems, newItems.last)
-      }.map(makePage)
+      }
+      .map(makePage)
       .caching(to: localFeedLoader)
+      .subscribe(on: scheduler)
+      .eraseToAnyPublisher()
   }
   
   private func makeRemoteFeedLoader(after: FeedImage? = nil) -> AnyPublisher<[FeedImage], Error> {
